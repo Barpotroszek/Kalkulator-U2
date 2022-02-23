@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color:white;
+    padding: 1em;
+}
+label{
+    font-size: larger;
+}
+
+#wynik::before{
+    font-size: larger;
+    content: "Wynik w U2 to: ";
+}
+
+#wynik::after{
+    display: block;
+    font-style: normal;
+    font-size: smaller;
+    margin: 0.2%;
+    content: "(max ilość bitów: 10)";
+}
