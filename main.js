@@ -23,7 +23,10 @@ window.onload = () => {
         left = parseInt(left); // całości
         right = parseFloat(`0.${right}`); // ułamek
         console.log([left, right]);
-        if (left < 0) left = 256+left;
+        if (left < 0) {
+            result = "";
+            left = 256+left;
+        }
         else result = "0";
         result += to_bin(left);
         wynik.innerText = result;
