@@ -12,6 +12,24 @@ function to_bin(dec){
     return bin.join('');
 }
 
+function po_przecinku(dec){
+    let bin = [];
+    console.log("Po przecinku")
+    do{
+        console.log(`${dec} -> ${dec*2} -> ${Math.floor(dec*2)}`)
+        dec *=2;
+        bin.push(Math.floor(dec));
+        dec = dec%1
+        if(bin.length >= 10) {
+            console.log("to long")
+            break
+        }
+    }while(dec != 0);
+    console.log("Lenght: " + bin.length);
+    if(bin.length > 10) bin.push("(Skrócone do 10)")
+    return bin.join('');
+}
+
 window.onload = () => {
     const submit_btn = document.getElementById("submit");
     const decimal = document.getElementById("decimal");
@@ -29,6 +47,7 @@ window.onload = () => {
         }
         else result = "0";
         result += to_bin(left);
+        if(right) result += ` ${po_przecinku(right)}`;
         wynik.innerText = result;
     })
 };
